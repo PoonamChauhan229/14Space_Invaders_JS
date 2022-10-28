@@ -21,7 +21,7 @@
     left:550px;
 }
 
-#enemy{
+.enemy{
     background-image: url(./assets/enemy.png);
     width: 50px;
     height:50px;
@@ -30,13 +30,11 @@
     left:550px;
 }
 
-#missile{
+.missile{
     background-image: url(./assets/missile1.png);
     width: 10px;
     height:28px;
     position: absolute;
-    top:200px;
-    left:550px;
 }
 
 #missiles{
@@ -44,9 +42,9 @@
     width: 1200;
     height: 800px;
 }
+#enemies{
+    /* height  as auto and width of the container =>background , as we want inside the background itself*/
+    width: 1200;
+    height: auto;
+}
 
-/* 1st part over */
-
-/* 2nd part start */
-
-/* 2nd part over */
