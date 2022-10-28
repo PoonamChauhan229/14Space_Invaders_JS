@@ -197,7 +197,7 @@ function disable(){
 }
 
 function gameTimer(){
-    var timer=setInterval(gameLoop,300)
+    var timer=setInterval(gameLoop,400)
     return timer;
 }
 
