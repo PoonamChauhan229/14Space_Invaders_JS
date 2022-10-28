@@ -110,11 +110,13 @@ function gameLoop(){
     drawMissiles()
     moveEnemies()
     drawEnemies()
+    shooting()
+    gameEnd();
     console.log("hi")
 }
 // gameLoop()
 
-setInterval(gameLoop,300)
+let game=setInterval(gameLoop,300)
 
 // enenmies 
 
@@ -135,4 +137,38 @@ function moveEnemies(){
     enemies.map((element)=>{
         element.top= element.top+3     
     })
+}
+
+// shooting
+function shooting() {
+    for (let enemy = 0; enemy < enemies.length; enemy++) {
+        for (let missile = 0; missile < missiles.length; missile++) {
+            if (
+                missiles[missile].left >= enemies[enemy].left &&
+                missiles[missile].left <= (enemies[enemy].left + 50) &&
+
+                missiles[missile].top >= enemies[enemy].top &&
+                missiles[missile].top <= (enemies[enemy].top + 50)
+            ) {
+                console.log('hit');
+                enemies.splice(enemy, 1);
+                missiles.splice(missile, 1);
+            }
+        }
+    }
+}
+ 
+// game End
+function gameEnd(){
+    if(enemies.length===0){
+    let container = document.getElementById("background")
+    container.innerHTML = `<div class="result">YOU WIN</div>`
+
+    console.log("Win");
+
+    clearInterval(game);
+    // disable the keypress
+    // disable();
+    
+    }
 }
