@@ -160,10 +160,9 @@ function shooting() {
  
 // game End
 function gameEnd(){
-    if(enemies.length===0){
     let container = document.getElementById("background")
+    if(enemies.length===0){    
     container.innerHTML = `<div class="result">YOU WIN</div>`
-
     console.log("Win");
 
     clearInterval(game);
@@ -171,4 +170,17 @@ function gameEnd(){
     // disable();
     
     }
+    else if(enemyChecker()){
+    
+    let container = document.getElementById("background")
+    container.innerHTML = `<div class="result">YOU LOOSE</div>`
+
+    console.log("Win");
+    clearInterval(game);
+    }
+}
+// The some() method returns true (and stops) if the function returns true for one of the array elements.
+// for loosing the game , if any enemy is left out and it shouldnt go down more than 645
+function enemyChecker(){
+    return enemies.some((data)=>data.top===645)
 }
