@@ -228,3 +228,8 @@ document.getElementById('button').addEventListener("click", function(event) {
        
 
 })
+
+// reset
+function reset(){
+    player.value="";
+}
