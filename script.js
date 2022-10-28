@@ -157,7 +157,7 @@ function shooting() {
         }
     }
 }
- 
+
 // game End
 function gameEnd(){
     let container = document.getElementById("background")
@@ -167,20 +167,29 @@ function gameEnd(){
 
     clearInterval(game);
     // disable the keypress
-    // disable();
+    disable();
     
     }
-    else if(enemyChecker()){
-    
+    else if(enemyChecker()){    
     let container = document.getElementById("background")
-    container.innerHTML = `<div class="result">YOU LOOSE</div>`
-
-    console.log("Win");
+    container.innerHTML += `<div class="result">YOU LOOSE</div>`
+    console.log("Loose");
     clearInterval(game);
+    // disable the keypress
+    disable()
     }
 }
 // The some() method returns true (and stops) if the function returns true for one of the array elements.
 // for loosing the game , if any enemy is left out and it shouldnt go down more than 645
 function enemyChecker(){
-    return enemies.some((data)=>data.top===645)
+    return enemies.some((data)=>data.top==640)
 }
+
+// Now we need to disable the keypress as well
+
+function disable(){
+    document.onkeydown=function(e){
+        return false;
+    }
+}
+
