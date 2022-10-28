@@ -193,3 +193,23 @@ function disable(){
     }
 }
 
+var playerName = document.getElementById('enterPlayer')
+var player1 = document.getElementById('player1')
+document.getElementById('button').addEventListener("click", function (event) {
+
+    if (player1.value == null) {
+        alert("Enter the Player Names")
+        playerName.style.display = "block";
+        gameContainer.style.display = "none";
+
+    }
+    else{
+    playerName.style.display = "none";
+    gameContainer.style.display = "block";
+    console.log(event.target)
+    console.log(player1.value)
+    console.log(player2.value)
+    undoResetButton.style.display = "block";
+}
+
+})
