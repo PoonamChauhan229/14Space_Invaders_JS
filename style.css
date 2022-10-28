@@ -1,0 +1,52 @@
+/* 1st part start */
+#background{
+    background-image: url(./assets/background.png);
+    /* width: 100%;
+    height: 100vh; */
+
+    width: 1200;
+    height: 800px;
+}
+/* body{
+    margin:0;
+    padding:0;
+} */
+
+#hero{
+    background-image: url(./assets/hero.png);
+    width: 50px;
+    height:50px;
+    position: absolute;
+    top:700px;
+    left:550px;
+}
+
+#enemy{
+    background-image: url(./assets/enemy.png);
+    width: 50px;
+    height:50px;
+    position: absolute;
+    top:100px;
+    left:550px;
+}
+
+#missile{
+    background-image: url(./assets/missile1.png);
+    width: 10px;
+    height:28px;
+    position: absolute;
+    top:200px;
+    left:550px;
+}
+
+#missiles{
+    /* height and width of the container =>background , as we want inside the background itself*/
+    width: 1200;
+    height: 800px;
+}
+
+/* 1st part over */
+
+/* 2nd part start */
+
+/* 2nd part over */
