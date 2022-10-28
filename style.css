@@ -5,7 +5,10 @@
     height: 100vh; */
 
     width: 1200px;
-    height: 800px;
+    height: 640px;
+    display: none;
+    
+  background-repeat: no-repeat;
 }
 /* body{
     margin:0;
@@ -40,7 +43,7 @@
 #missiles{
     /* height and width of the container =>background , as we want inside the background itself*/
     width: 1200;
-    height: 800px;
+    height: 630px;
 }
 #enemies{
     /* height  as auto and width of the container =>background , as we want inside the background itself*/
@@ -50,41 +53,43 @@
 /* result you win */
 .result{
     font-size: 50px;
-    width:250px;
+    width:auto;
     height:70px;
     background-color: white;
     color: black;
     font-family: monospace;
     position: absolute;
-    top: 350px;
-    left: 25%;
+    top: 250px;
+    left: 20%;
     padding-left: 20px;
   }
 
   /*  Player Name*/
 
   .container{
-    width: 330px;
+    width: 360px;
     margin: 20px auto 0 auto;
     /* border:1px solid red; */
     text-align: center;
+    
 }
 .enterPlayer{
     background-color: rgb(214, 210, 210);
-    height:130px;
+    height:100px;
     border-radius: 5px 5px 5px 5px;
     border: none;
     padding:25px 15px 0px 15px;
+    margin-bottom: 10px;
 }
 
 #game{
     background-color: none;
     border-radius: none;
-    }
+}
 .enterPlayer span{
     padding: 4px 4px;
     text-align: center;
-    background-color: #e9ecef;
+    /* background-color: #e9ecef; */
     border-radius: 0.25rem;
 }
 input{
@@ -115,4 +120,6 @@ button{
 body{
     font-family:'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
     font-size: 20px;
+    margin: 0;
+    padding: 0;
 }

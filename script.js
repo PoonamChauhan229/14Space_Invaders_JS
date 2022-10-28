@@ -1,7 +1,7 @@
 // This should shift to left and right, so we will have to creat an object of same key and values of CSS properitues so that we can use them
 // hero
 var hero={
-    top:700,
+    top:570,
     left:550,
 }
 
@@ -116,8 +116,8 @@ function gameLoop(){
 }
 // gameLoop()
 
-let game=setInterval(gameLoop,300)
-
+// let game=setInterval(gameLoop,300)
+var game;
 // enenmies 
 
 function drawEnemies(){
@@ -158,11 +158,13 @@ function shooting() {
     }
 }
 
+
 // game End
+var player = document.getElementById('player')
 function gameEnd(){
     let container = document.getElementById("background")
     if(enemies.length===0){    
-    container.innerHTML = `<div class="result">YOU WIN</div>`
+    container.innerHTML = `<div class="result">${player.value},YOU WIN😍😍😊😊</div>`
     console.log("Win");
 
     clearInterval(game);
@@ -172,7 +174,7 @@ function gameEnd(){
     }
     else if(enemyChecker()){    
     let container = document.getElementById("background")
-    container.innerHTML += `<div class="result">YOU LOOSE</div>`
+    container.innerHTML += `<div class="result">${player.value},YOU LOOSE!!!😌😌</div>`
     console.log("Loose");
     clearInterval(game);
     // disable the keypress
@@ -182,7 +184,8 @@ function gameEnd(){
 // The some() method returns true (and stops) if the function returns true for one of the array elements.
 // for loosing the game , if any enemy is left out and it shouldnt go down more than 645
 function enemyChecker(){
-    return enemies.some((data)=>data.top==640)
+   return enemies.some((data)=>data.top==529)
+    // console.log(enemies.some((data)=>console.log(data.top)))
 }
 
 // Now we need to disable the keypress as well
@@ -193,23 +196,29 @@ function disable(){
     }
 }
 
-var playerName = document.getElementById('enterPlayer')
-var player1 = document.getElementById('player1')
-document.getElementById('button').addEventListener("click", function (event) {
+function gameTimer(){
+    var timer=setInterval(gameLoop,300)
+    return timer;
+}
 
-    if (player1.value == null) {
+// player name and all
+// var player = document.getElementById('player')
+var playerContainer = document.getElementById('playerContainer')
+var background=document.getElementById('background')
+document.getElementById('button').addEventListener("click", function(event) {
+
+    if (player.value == "") {
         alert("Enter the Player Names")
-        playerName.style.display = "block";
-        gameContainer.style.display = "none";
+        playerContainer.style.display = "block";
+        background.style.display = "none";
 
     }
     else{
-    playerName.style.display = "none";
-    gameContainer.style.display = "block";
-    console.log(event.target)
-    console.log(player1.value)
-    console.log(player2.value)
-    undoResetButton.style.display = "block";
-}
+        playerContainer.style.display = "none";
+        background.style.display = "block";
+        console.log(player.value)
+        game=gameTimer()
+    }
+       
 
 })
