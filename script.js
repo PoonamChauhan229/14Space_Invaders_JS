@@ -164,17 +164,23 @@ var player = document.getElementById('player')
 function gameEnd(){
     let container = document.getElementById("background")
     if(enemies.length===0){    
-    container.innerHTML = `<div class="result">${player.value},YOU WIN😍😍😊😊</div>`
+    container.innerHTML = `<div class="result">${player.value},YOU WIN!!!😍😍😊😊</div>
+    
+    <button  class="restart"onClick="window.location.reload()">Restart</button>
+    `
     console.log("Win");
 
     clearInterval(game);
     // disable the keypress
     disable();
+
     
     }
     else if(enemyChecker()){    
     let container = document.getElementById("background")
-    container.innerHTML += `<div class="result">${player.value},YOU LOOSE!!!😌😌</div>`
+    container.innerHTML += `<div class="result">${player.value},YOU LOOSE!!!😌😌😌😌</div>
+    <button  class="restart"onClick="window.location.reload()">Restart</button>
+    `
     console.log("Loose");
     clearInterval(game);
     // disable the keypress
